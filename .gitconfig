@@ -1,0 +1,28 @@
+[user]
+	name = 
+	email = 
+[core]
+	editor = vim
+	excludesfile = ~/.gitignore
+[merge]
+	tool = vimdiff
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
+[alias]
+	d = difftool
+[color]
+    status = auto
+    branch = auto
+    interactive = auto
+    repositoryformatversion = 0
+    filemode = true
+    bare = false
+    logallrefupdates = true
+[pull]
+    rebase = true
+#[url "git@github.com:"]
+#	insteadOf = https://github.com/
+[help]
+	autocorrect = 1
