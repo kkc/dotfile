@@ -3,27 +3,32 @@ set backspace=indent,eol,start
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
 
 filetype plugin indent on
 
 " let Vundle manage Vundle, required
-Plugin 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'scrooloose/nerdcommenter'
+"Plugin 'Valloric/YouCompleteMe'
+Plugin 'majutsushi/tagbar'
+Plugin 'moll/vim-node'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'pangloss/vim-javascript'
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'scrooloose/syntastic'
+Plugin 'fatih/vim-go'
+Plugin 'python-mode/python-mode'
+Plugin 'hynek/vim-python-pep8-indent'
+Plugin 'pearofducks/ansible-vim'
+Plugin 'tpope/vim-sensible'
 
-Bundle 'scrooloose/nerdtree'
-Bundle 'majutsushi/tagbar'
-Bundle 'moll/vim-node'
-Bundle 'vim-airline/vim-airline'
-Bundle 'vim-airline/vim-airline-themes'
-Bundle 'pangloss/vim-javascript'
-Bundle 'jelera/vim-javascript-syntax'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'scrooloose/syntastic'
-Bundle 'fatih/vim-go'
-Bundle 'klen/python-mode'
-Bundle 'hynek/vim-python-pep8-indent'
-Bundle 'pearofducks/ansible-vim'
+call vundle#end()
 
 "vim-node
 autocmd User Node
@@ -83,6 +88,10 @@ let g:syntastic_warning_symbol = '⚠'
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+let g:go_list_type = "quickfix"
 
 "airline
 set laststatus=2
@@ -244,10 +253,4 @@ set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
 
-" always uses spaces instead of tab characters
-set expandtab
-"size of a hard tabstop
-set tabstop=4
-" size of an indent
-set shiftwidth=4
 set softtabstop=4
